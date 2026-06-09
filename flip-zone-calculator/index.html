@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Flip Zone Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Flip Zone Calculator</h1>
+            <p class="subtitle">Where the NBA draft meets the new economics of college basketball</p>
+            <p class="credit">By <a href="https://liamganion.substack.com" target="_blank">Liam Ganion</a></p>
+        </header>
+
+        <section class="intro">
+            <p>The House settlement reshaped the financial calculus of the NBA draft. For elite prospects, the math hasn't changed. For everyone else, the question is no longer <em>can I play in the NBA</em> — it's <em>does the money make sense right now?</em></p>
+            <p>Enter a prospect's projected draft position and their estimated college compensation to see where the flip zone begins.</p>
+        </section>
+
+        <section class="calculator">
+            <div class="inputs">
+                <div class="input-group">
+                    <label for="draft-pick">Projected Draft Pick</label>
+                    <div class="input-wrapper">
+                        <select id="draft-pick">
+                            <optgroup label="Lottery">
+                                <option value="1">1st Overall</option>
+                                <option value="2">2nd Overall</option>
+                                <option value="3">3rd Overall</option>
+                                <option value="4">4th Overall</option>
+                                <option value="5">5th Overall</option>
+                                <option value="6">6th Overall</option>
+                                <option value="7">7th Overall</option>
+                                <option value="8">8th Overall</option>
+                                <option value="9">9th Overall</option>
+                                <option value="10">10th Overall</option>
+                                <option value="11">11th Overall</option>
+                                <option value="12">12th Overall</option>
+                                <option value="13">13th Overall</option>
+                                <option value="14" selected>14th Overall</option>
+                            </optgroup>
+                            <optgroup label="Mid First Round">
+                                <option value="15">15th Overall</option>
+                                <option value="16">16th Overall</option>
+                                <option value="17">17th Overall</option>
+                                <option value="18">18th Overall</option>
+                                <option value="19">19th Overall</option>
+                                <option value="20">20th Overall</option>
+                            </optgroup>
+                            <optgroup label="Late First Round">
+                                <option value="21">21st Overall</option>
+                                <option value="22">22nd Overall</option>
+                                <option value="23">23rd Overall</option>
+                                <option value="24">24th Overall</option>
+                                <option value="25">25th Overall</option>
+                                <option value="26">26th Overall</option>
+                                <option value="27">27th Overall</option>
+                                <option value="28">28th Overall</option>
+                                <option value="29">29th Overall</option>
+                                <option value="30">30th Overall</option>
+                            </optgroup>
+                            <optgroup label="Second Round">
+                                <option value="31">31st Overall</option>
+                                <option value="32">32nd Overall</option>
+                                <option value="33">33rd Overall</option>
+                                <option value="34">34th Overall</option>
+                                <option value="35">35th Overall</option>
+                                <option value="36">36th-40th (Early-Mid 2nd)</option>
+                                <option value="45">41st-50th (Mid 2nd Round)</option>
+                                <option value="55">51st-58th (Late 2nd Round)</option>
+                                <option value="59">59th Overall</option>
+                                <option value="60">60th Overall</option>
+                            </optgroup>
+                            <option value="0">Undrafted</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="college-comp">Estimated Annual College Compensation</label>
+                    <div class="input-wrapper dollar">
+                        <input type="text" id="college-comp" placeholder="3,000,000" value="3,000,000">
+                    </div>
+                    <div class="presets">
+                        <button class="preset" data-value="500000">$500K</button>
+                        <button class="preset" data-value="1000000">$1M</button>
+                        <button class="preset" data-value="2000000">$2M</button>
+                        <button class="preset active" data-value="3000000">$3M</button>
+                        <button class="preset" data-value="5000000">$5M</button>
+                        <button class="preset" data-value="7000000">$7M</button>
+                    </div>
+                    <p class="input-note">NIL + revenue sharing combined. Top programs now offer $2M-$5M+ for basketball.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="years-remaining">Years Before Entering Draft</label>
+                    <div class="input-wrapper">
+                        <select id="years-remaining">
+                            <option value="1" selected>1 year</option>
+                            <option value="2">2 years</option>
+                            <option value="3">3 years</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="improvement">Draft Stock Improvement if Returning</label>
+                    <div class="input-wrapper">
+                        <select id="improvement">
+                            <option value="0">No change (same projection next year)</option>
+                            <option value="5" selected>Moderate rise (+5 picks)</option>
+                            <option value="10">Significant rise (+10 picks)</option>
+                            <option value="15">Major breakout (+15 picks)</option>
+                            <option value="-5">Stock falls (-5 picks)</option>
+                            <option value="-10">Significant drop (-10 picks)</option>
+                        </select>
+                    </div>
+                    <p class="input-note">Not every player improves. Injury, regression, and draft class strength all factor in.</p>
+                </div>
+            </div>
+
+            <button id="calculate" class="calculate-btn">Calculate the Flip Zone</button>
+        </section>
+
+        <section id="results" class="results hidden">
+            <h2>The Comparison</h2>
+
+            <div class="scenario-cards">
+                <div class="scenario-card nba">
+                    <div class="scenario-header">
+                        <h3>Enter the Draft Now</h3>
+                        <span class="scenario-tag">NBA Path</span>
+                    </div>
+                    <div class="scenario-body">
+                        <div class="big-number">
+                            <span class="label">Total Earnings (4 Years)</span>
+                            <span id="nba-total" class="value">—</span>
+                        </div>
+                        <table class="breakdown">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Salary</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="nba-breakdown"></tbody>
+                        </table>
+                        <div id="nba-notes" class="scenario-notes"></div>
+                    </div>
+                </div>
+
+                <div class="scenario-card college">
+                    <div class="scenario-header">
+                        <h3>Return to School</h3>
+                        <span class="scenario-tag">College Path</span>
+                    </div>
+                    <div class="scenario-body">
+                        <div class="big-number">
+                            <span class="label">Total Earnings (4 Years)</span>
+                            <span id="college-total" class="value">—</span>
+                        </div>
+                        <table class="breakdown">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Earnings</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="college-breakdown"></tbody>
+                        </table>
+                        <div id="college-notes" class="scenario-notes"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="verdict-card">
+                <div class="verdict-header">
+                    <h3>The Verdict</h3>
+                </div>
+                <div id="verdict-body" class="verdict-body"></div>
+            </div>
+
+            <div class="context-card">
+                <h3>Beyond the Money</h3>
+                <div id="context-body" class="context-body">
+                    <p>Financial comparison is only one variable. Other factors that matter:</p>
+                    <ul>
+                        <li><strong>Development:</strong> Some players develop faster against NBA competition. Others benefit from being the focal point of a college offense.</li>
+                        <li><strong>Injury risk:</strong> Every additional college season carries risk with no guaranteed NBA contract as insurance.</li>
+                        <li><strong>Draft class strength:</strong> A weaker draft class next year could push a prospect higher. A stronger one could push them lower.</li>
+                        <li><strong>NIL deal durability:</strong> The CSC has rejected 524 deals worth $14.94M. Not all college compensation is guaranteed to survive regulatory scrutiny.</li>
+                        <li><strong>Age:</strong> NBA teams generally prefer younger prospects. Returning to school means entering the league older, which can affect perceived upside.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-studies">
+            <h2>Recent Decisions</h2>
+            <div class="case-study-grid">
+                <div class="case-study" data-pick="13" data-comp="4000000" data-years="1" data-improvement="5">
+                    <div class="case-name">Thomas Haugh</div>
+                    <div class="case-detail">Florida | ESPN #13 | Returned</div>
+                    <div class="case-outcome returned">Chose college</div>
+                </div>
+                <div class="case-study" data-pick="14" data-comp="3500000" data-years="1" data-improvement="5">
+                    <div class="case-name">Braylon Mullins</div>
+                    <div class="case-detail">UConn | Projected ~14th | Returned</div>
+                    <div class="case-outcome returned">Chose college</div>
+                </div>
+                <div class="case-study" data-pick="35" data-comp="6000000" data-years="1" data-improvement="10">
+                    <div class="case-name">Milan Momcilovic</div>
+                    <div class="case-detail">Iowa State → Kentucky | 2nd Rd | Returned</div>
+                    <div class="case-outcome returned">Chose college ($6M+)</div>
+                </div>
+                <div class="case-study" data-pick="34" data-comp="6000000" data-years="2" data-improvement="10">
+                    <div class="case-name">Tounde Yessoufou</div>
+                    <div class="case-detail">Baylor → St. John's | Projected 34th | Returned</div>
+                    <div class="case-outcome returned">Chose college ($6M+)</div>
+                </div>
+                <div class="case-study" data-pick="17" data-comp="2000000" data-years="1" data-improvement="0">
+                    <div class="case-name">Morez Johnson Jr.</div>
+                    <div class="case-detail">Michigan | Projected ~17th | Stayed</div>
+                    <div class="case-outcome stayed">Entered draft</div>
+                </div>
+                <div class="case-study" data-pick="22" data-comp="3000000" data-years="1" data-improvement="0">
+                    <div class="case-name">Allen Graves</div>
+                    <div class="case-detail">Santa Clara | Projected ~22nd | Stayed</div>
+                    <div class="case-outcome stayed">Entered draft</div>
+                </div>
+            </div>
+            <p class="case-note">Click any case study to load their numbers into the calculator.</p>
+        </section>
+
+        <footer>
+            <p>Built by <a href="https://liamganion.substack.com" target="_blank">Liam Ganion</a>. Salary data from the 2026 NBA Rookie Scale. Read the analysis: <a href="https://liamganion.substack.com/p/seeing-the-tank-the-nba-draft-pool" target="_blank">Seeing the Tank: The NBA Draft Pool Post-House</a>.</p>
+            <p class="disclaimer">This tool is for analytical purposes only. Actual compensation varies based on contract negotiations, team options, performance incentives, and other factors. College compensation estimates are approximations based on publicly reported NIL and revenue-sharing figures.</p>
+        </footer>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
