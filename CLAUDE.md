@@ -1,5 +1,52 @@
 # liamganion.com
 
+## Who Is Liam Ganion
+
+Liam Ganion, 24. Third-year law student (3L) at Pepperdine Caruso School of Law, graduating and taking the bar in August 2027. Graduated from UC Berkeley in 2024 with a degree in Environmental Science and International Politics. Currently works as a compliance officer for Pepperdine's athletic department.
+
+### The Goal
+
+Become an NBA General Manager or top front office executive. The dream organization is the Los Angeles Lakers. This is not a casual interest — every piece of this site, every article, every tool, and every relationship is oriented toward building the resume, skillset, and reputation to get there.
+
+### How He Got Here
+
+In February 2026, Liam competed at the Tulane Pro Basketball Negotiation Competition as the only solo competitor in a field of three-person teams. He beat the defending champions from Penn Law. Bobby Marks (ESPN salary cap analyst) was one of his judges. At the networking event that night, he had a 15-minute conversation with Onsi Saleh (GM, Atlanta Hawks) and an hour-long conversation with Marshall Rader (Sr. Director of Salary Cap & Strategy, Los Angeles Lakers). Marshall and Liam connected over golf and hit it off personally — Marshall later invited him for coffee in El Segundo and has become a genuine relationship, not just a networking contact.
+
+Liam's reputation at Tulane also led to an unsolicited offer from basketball agent Michael Siegel to join his mentorship program. Siegel keeps a team of 2L and 3L mentees and places them with NBA teams or agencies after graduation. Liam chose the player evaluation track within Siegel's program.
+
+### Key Relationships
+
+| Person | Role | Relationship Status |
+|--------|------|-------------------|
+| Marshall Rader | Lakers Sr. Director, Salary Cap & Strategy | Strong. Coffee in El Segundo. Golf connection. Gave the advice to "learn to build things technologically." Said it makes Liam much more hireable and that he wishes he had the skill himself. |
+| Chris Feller | Knicks Manager, Basketball Strategy | Met at ASU NBA Trade Deadline Competition (Nov 2025). Said he'd help however he can. Enjoyed Part 1 and asked follow-up questions. |
+| Makar Gevorkian | Nets VP, Basketball Operations | Had a great initial call. Brooklyn doesn't offer entry-level summer positions, only full-time. Told Liam to wait until law school graduation to pursue Brooklyn. Warm check-in stage. |
+| Onsi Saleh | Hawks GM | Met at Tulane networking event. 15-minute conversation. Warming stage. |
+| Bobby Marks | ESPN salary cap analyst | Judged Liam's round at Tulane. Covers the exact territory that Liam writes about. Natural reconnect when articles are published. |
+| Michael Siegel | Basketball agent / mentor | Heard about Liam from Tulane judges and graduating Penn 3Ls. Offered mentorship spot. Liam is on the player evaluation track. Onboarding started spring 2026. |
+
+### Career Timeline
+
+- **Now (3L year, 2026-27):** Write for Drop Step, build tools for the site, work with Siegel on player evals, maintain relationships with Marshall/Feller/Gevorkian/Marks. Marshall advised against the Lakers seasonal internship (requires full-time in-office, incompatible with law school) and instead told Liam to spend 3L year learning to build things technologically.
+- **August 2027:** Graduate from Pepperdine Law, take the bar.
+- **Post-bar target roles:** Basketball Operations Analyst, Salary Cap Analyst, Basketball Strategy Associate, or Legal/CBA Compliance role with an NBA team. The JD + CBA knowledge + technical portfolio is the differentiator.
+- **Long-term:** Work up through basketball operations to VP of Basketball Operations, Assistant GM, and eventually GM.
+
+### What Makes the Pitch Different
+
+Most law students applying to NBA front offices have a JD and maybe a competition or two. Liam has:
+1. A JD from Pepperdine with compliance experience
+2. Solo win at Tulane against three-person teams (including defending champs from Penn)
+3. Genuine relationships with executives at the Lakers, Knicks, Nets, and Hawks — plus a mentor placing people into teams and agencies
+4. A public body of writing (Drop Step on Substack) that he sends directly to those contacts and that they engage with
+5. A technical portfolio of interactive tools that demonstrate he can bring basketball concepts to life — the specific skill Marshall said he wishes he had
+
+The site is where #4 and #5 live. It is not a hobby project. It is a career asset.
+
+### Communication Preferences
+
+Liam prefers honest, direct communication. No ChatGPT-style "It's not X, it's Y" phrasing or short punchy sentences. Praise should be earned, not reflexive. Responses should lean toward progression and development.
+
 ## What This Is
 
 Personal portfolio site for Liam Ganion — a basketball analytics portfolio that houses interactive tools, data visualizations, and links to longform writing published on Substack (Drop Step). The site exists to demonstrate the ability to "bring concepts to life" technologically, per advice from Marshall Rader (Lakers Sr. Director, Salary Cap & Strategy). It is both a public-facing portfolio and a career asset for NBA front office hiring.
