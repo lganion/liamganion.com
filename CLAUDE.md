@@ -84,7 +84,7 @@ All tools should follow this same design language for visual consistency across 
 - Six clickable case studies updated with actual 2026 draft outcomes (Jul 2026): Johnson **drafted 9th (Mavericks)**, Graves **drafted 19th (Raptors)** — both beat their projections; Haugh (ESPN #13, returned), Mullins (projected 9th-17th, **never declared** — not a withdrawal), Momcilovic ($6M Kentucky), Yessoufou ($6M St. John's)
 - `calculate()` takes a `scrollToResults` param; page-load auto-calc passes `false` so embeds don't scroll-jump
 - Built to accompany "Seeing the Tank" Part 2; will also be referenced in the post-summer-league favorite drafts article (Jul 2026)
-- Also deployed standalone at `stormymail.github.io/flip-zone-calculator/` — standalone repo synced from the site copy Jul 2026 (footer Part 2 link is absolute there)
+- Also deployed standalone at `lganion.github.io/flip-zone-calculator/` — the repo was transferred from the `stormymail` account to `lganion` (discovered Jul 17, 2026); the old `stormymail.github.io` Pages URL now 404s. **Any published article linking the old URL needs updating.** Standalone repo synced from the site copy Jul 2026 (footer Part 2 link is absolute there)
 
 ### Seeing the Tank, Part 2 page (`/seeing-the-tank-part-2/`)
 - Article page with the Flip Zone Calculator embedded mid-article (reuses `../flip-zone-calculator/styles.css` + `calculator.js`; `article.css` layers prose/nav/stat-strip/pullquote styles on top)
