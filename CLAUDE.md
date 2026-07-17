@@ -77,12 +77,21 @@ All tools should follow this same design language for visual consistency across 
 
 ### Flip Zone Calculator (`/flip-zone-calculator/`)
 - Compares NBA rookie scale earnings vs. college NIL/revenue-sharing compensation over a 4-year window
-- Uses 2026 NBA Rookie Scale data for all 30 first-round picks
+- Uses the **2026-27 NBA Rookie Scale** ($164.961M cap) at the **120% maximum** first-round picks customarily sign for — updated Jul 2026 post-draft; pick 1 = $14,748,000, matching Dybantsa's actual contract (source: Hoops Rumors rookie scale table)
+- 2026-27 second-round figures: two-way $678,882, second-round exception max $2,449,421 (4-yr version), rookie minimum $1,357,763
 - Handles second-round picks (second-round exception vs. two-way contracts)
 - Projects cap growth at 10% annually, rookie raises at 5%
-- Six clickable case studies: Haugh, Mullins, Momcilovic, Yessoufou, Johnson, Graves
-- Built to accompany "Seeing the Tank" Part 2 on Substack
-- Also deployed standalone at `stormymail.github.io/flip-zone-calculator/`
+- Six clickable case studies updated with actual 2026 draft outcomes (Jul 2026): Johnson **drafted 9th (Mavericks)**, Graves **drafted 19th (Raptors)** — both beat their projections; Haugh (ESPN #13, returned), Mullins (projected 9th-17th, **never declared** — not a withdrawal), Momcilovic ($6M Kentucky), Yessoufou ($6M St. John's)
+- `calculate()` takes a `scrollToResults` param; page-load auto-calc passes `false` so embeds don't scroll-jump
+- Built to accompany "Seeing the Tank" Part 2; will also be referenced in the post-summer-league favorite drafts article (Jul 2026)
+- Also deployed standalone at `stormymail.github.io/flip-zone-calculator/` — standalone repo synced from the site copy Jul 2026 (footer Part 2 link is absolute there)
+
+### Seeing the Tank, Part 2 page (`/seeing-the-tank-part-2/`)
+- Article page with the Flip Zone Calculator embedded mid-article (reuses `../flip-zone-calculator/styles.css` + `calculator.js`; `article.css` layers prose/nav/stat-strip/pullquote styles on top)
+- `index.html` currently holds a Claude-drafted version of the article as structural scaffolding — **Liam is writing the final article himself**; the draft's prose is placeholder, the embed/components are keepers
+- `research-notes.md` — verified facts, sources, quotes, and calculator outputs for Part 2 (all claims fact-checked Jun 9, 2026)
+- `substack-draft.md` — Substack-format adaptation with link-card placeholders (same placeholder status)
+- Homepage Part 2 article row currently points here instead of Substack — revisit once the Substack version publishes (see Decisions #1)
 
 ## Writing (Drop Step on Substack)
 
@@ -135,6 +144,8 @@ Also configured in `.claude/launch.json` as "Liam Ganion Site" on port 8081.
 ### Near-term
 - [ ] Purchase `liamganion.com` domain and configure DNS
 - [ ] Update Part 2 article link once published on Substack
+- [ ] **Deploy the `seeing-the-tank-part-2/` page** — still uncommitted (holds placeholder prose Liam is replacing). Once it ships, change the calculator footer's Part 2 link from the Substack URL back to `../seeing-the-tank-part-2/`, and update the homepage Part 2 row (also uncommitted)
+- [ ] Post-summer-league favorite drafts article (Jul 2026) — will reference the Flip Zone Calculator and the flip zone guys (Johnson 9th, Graves 19th both beat projections)
 - [ ] CSC Enforcement article + companion visualization
 
 ### Tool ideas (from Marshall's advice to "build things")

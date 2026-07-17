@@ -1,26 +1,30 @@
-// 2026 NBA Rookie Scale - Year 1 salaries (100% scale)
+// 2026-27 NBA Rookie Scale - Year 1 salaries (100% of scale, $164.961M cap)
+// Note: virtually every first-round pick signs for the 120% maximum,
+// applied below in getFirstYearSalary(). E.g. AJ Dybantsa's $14,748,000
+// first-year salary = 120% of the $12.29M scale amount for pick 1.
+const FIRST_ROUND_SCALE_MULTIPLIER = 1.2;
 const ROOKIE_SCALE = {
-    1: 11521600, 2: 10308600, 3: 9257400, 4: 8346400, 5: 7558200,
-    6: 6864700, 7: 6266700, 8: 5741000, 9: 5277100, 10: 5013400,
-    11: 4762600, 12: 4524600, 13: 4298300, 14: 4083600, 15: 3879200,
-    16: 3685300, 17: 3500900, 18: 3326100, 19: 3176300, 20: 3049000,
-    21: 2927100, 22: 2810200, 23: 2697900, 24: 2590100, 25: 2486100,
-    26: 2403800, 27: 2334400, 28: 2319900, 29: 2303300, 30: 2286500
+    1: 12290000, 2: 10996100, 3: 9874800, 4: 8903100, 5: 8062300,
+    6: 7322500, 7: 6684700, 8: 6123900, 9: 5629000, 10: 5347800,
+    11: 5080200, 12: 4826400, 13: 4585000, 14: 4356000, 15: 4137900,
+    16: 3931100, 17: 3734400, 18: 3547900, 19: 3388100, 20: 3252300,
+    21: 3122300, 22: 2997600, 23: 2877800, 24: 2762800, 25: 2651900,
+    26: 2564100, 27: 2490100, 28: 2474600, 29: 2456900, 30: 2439000
 };
 
 // Annual salary cap increase projection (~10% per year based on recent trends)
 const CAP_GROWTH_RATE = 0.10;
 
-// Second round / two-way / undrafted compensation
-const SECOND_ROUND_SALARY = 636435; // Two-way contract value
-const SECOND_ROUND_EXCEPTION_MAX = 2233000; // Second round pick exception max year 1
+// Second round / two-way / undrafted compensation (2026-27)
+const SECOND_ROUND_SALARY = 678882; // Two-way contract value (half the rookie minimum)
+const SECOND_ROUND_EXCEPTION_MAX = 2449421; // Second-round pick exception max year 1 (4-year deal)
 
 // Estimate rookie scale for future years (years 2-4 get annual raises of ~5%)
 const ROOKIE_ANNUAL_RAISE = 0.05;
 
 function getFirstYearSalary(pick) {
     if (pick >= 1 && pick <= 30) {
-        return ROOKIE_SCALE[pick];
+        return Math.round(ROOKIE_SCALE[pick] * FIRST_ROUND_SCALE_MULTIPLIER);
     }
     // Second round picks: best case is the second-round pick exception
     if (pick >= 31 && pick <= 45) {
@@ -58,7 +62,7 @@ function calculateNBAPath(pick) {
             guaranteed: false
         });
         // If they stick: minimum salary years 2-4 (optimistic)
-        const minSalary = 1200000; // Approximate minimum
+        const minSalary = 1357763; // 2026-27 rookie minimum
         for (let i = 1; i < 4; i++) {
             years.push({
                 year: i + 1,
@@ -136,7 +140,7 @@ function getOrdinal(n) {
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
-function calculate() {
+function calculate(scrollToResults = true) {
     const pick = parseInt(document.getElementById('draft-pick').value);
     const compRaw = document.getElementById('college-comp').value.replace(/[,$]/g, '');
     const collegeComp = parseInt(compRaw) || 0;
@@ -249,7 +253,9 @@ function calculate() {
 
     // Show results
     document.getElementById('results').classList.remove('hidden');
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scrollToResults) {
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 // Event listeners
@@ -302,5 +308,5 @@ document.querySelectorAll('.case-study').forEach(card => {
     });
 });
 
-// Calculate on page load with defaults
-document.addEventListener('DOMContentLoaded', calculate);
+// Calculate on page load with defaults (without scrolling to results)
+document.addEventListener('DOMContentLoaded', () => calculate(false));
